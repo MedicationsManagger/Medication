@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Entites;
+
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,10 +13,14 @@ namespace Medication.Controllers
     {
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult< IEnumerable<User>>> Get([FromQuery]string userName, string password)
         {
-            return new string[] { "value1", "value2" };
+            User u= 
         }
+
+
+
+
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
