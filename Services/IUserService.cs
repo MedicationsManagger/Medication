@@ -11,7 +11,8 @@ namespace Services
     public interface IUserService
     {
         public Task<User> getUser(string userName, string password);
-        
+        public Task<User> addUser(User user);
+        public Task updateUser(User user);
 
     }
 }

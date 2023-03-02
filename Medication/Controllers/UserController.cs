@@ -45,14 +45,18 @@ namespace Medication.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<User>> Post([FromBody] User user)
         {
+            User u = await _userService.addUser(user);
+            return user;
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async void Put(int id, [FromBody] User user )
         {
+            await _userService.updateUser(user);
+            return;
         }
 
         // DELETE api/<UserController>/5

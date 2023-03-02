@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Medication
 {
@@ -23,13 +24,20 @@ namespace Medication
         public DateTime BirthDate { get; set; }
         public string IdentityNumber { get; set; } = null!;
         public int GenderId { get; set; }
-
+       
+        [JsonIgnore]
         public virtual GenderCode Gender { get; set; } = null!;
+        [JsonIgnore]
         public virtual ICollection<Measurement> Measurements { get; set; }
+        [JsonIgnore]
         public virtual ICollection<MedicineForUser> MedicineForUsers { get; set; }
+        [JsonIgnore]
         public virtual ICollection<MedicineStock> MedicineStocks { get; set; }
+        [JsonIgnore]
         public virtual ICollection<SystemMessage> SystemMessages { get; set; }
+        [JsonIgnore]
         public virtual ICollection<UserAndCaregiver> UserAndCaregiverCaregivers { get; set; }
+        [JsonIgnore]
         public virtual ICollection<UserAndCaregiver> UserAndCaregiverUsers { get; set; }
     }
 }

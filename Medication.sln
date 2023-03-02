@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medication", "Medication\Medication.csproj", "{C26E04F3-77B1-4E68-8B1E-976B4FE4FCEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medication", "Medication\Medication.csproj", "{C26E04F3-77B1-4E68-8B1E-976B4FE4FCEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{64A6CFFD-CE8C-4B5A-A4FD-417BE026793A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{64A6CFFD-CE8C-4B5A-A4FD-417BE026793A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{5E7B1072-B7D8-4123-8D16-53D5F9B1F8FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{5E7B1072-B7D8-4123-8D16-53D5F9B1F8FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entites", "Entites\Entites.csproj", "{9DB31BE1-0CF5-45AF-AAAC-9A823CFCF9DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entites", "Entites\Entites.csproj", "{9DB31BE1-0CF5-45AF-AAAC-9A823CFCF9DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{D6DD551A-A2EF-4C9B-B616-42B0D90FB293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9DB31BE1-0CF5-45AF-AAAC-9A823CFCF9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB31BE1-0CF5-45AF-AAAC-9A823CFCF9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB31BE1-0CF5-45AF-AAAC-9A823CFCF9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DD551A-A2EF-4C9B-B616-42B0D90FB293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DD551A-A2EF-4C9B-B616-42B0D90FB293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DD551A-A2EF-4C9B-B616-42B0D90FB293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DD551A-A2EF-4C9B-B616-42B0D90FB293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

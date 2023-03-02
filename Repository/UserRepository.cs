@@ -24,6 +24,24 @@ namespace Repository
             return user.FirstOrDefault();
             
         }
+        public async Task <User> addUser(User user)
+        {
+            await _medicationsContext.Users.AddAsync(user);
+            await _medicationsContext.SaveChangesAsync();
+            return user;
+
+        }
+        public async Task  updateUser(User user)
+        {
+           var userToUpdate =await _medicationsContext.Users.FindAsync(user.Id);
+            if (userToUpdate == null) {
+                return;  
+            }
+            _medicationsContext.Entry(userToUpdate).CurrentValues.SetValues(user);
+            await _medicationsContext.SaveChangesAsync();
+            return;
+
+        }
 
 
 

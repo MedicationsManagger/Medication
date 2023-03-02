@@ -20,5 +20,16 @@ namespace Services
         {
             return await _UserRepository.getUser(userName, password);
         }
+        public async Task<User> addUser(User user)
+        {
+            return await _UserRepository.addUser(user);
+        }
+        public async Task  updateUser(User user)
+        {
+             await _UserRepository.updateUser(user);
+            return;
+        }
+
+       
     }
 }
