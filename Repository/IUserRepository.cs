@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
-        public Task<User> getUser(string userName, string password);
+
+        
+
+        public  Task<User> getUser(string userName, string password);
 
     }
 }

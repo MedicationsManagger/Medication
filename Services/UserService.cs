@@ -4,16 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Repository;
 
 namespace Services
 {
-    internal class UserService : IUserService
+    public class UserService : IUserService
     {
+        private IUserRepository _UserRepository;
 
-        private IUserRepository _IUserRepository;
-        public Task<User> getUser(string userName, string password)
+        public UserService(IUserRepository UserRepository)
         {
-
+            _UserRepository = UserRepository;
+        }
+        public async Task<User> getUser(string userName, string password)
+        {
+            return await _UserRepository.getUser(userName, password);
         }
     }
 }

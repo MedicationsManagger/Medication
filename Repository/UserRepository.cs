@@ -7,7 +7,7 @@ using Medication;
 
 namespace Repository
 {
-    internal class UserRepository: IUserRepository
+    public class UserRepository: IUserRepository
     {
         MedicationsContext _medicationsContext;
         public UserRepository(MedicationsContext medicationsContext)
@@ -20,8 +20,9 @@ namespace Repository
             var user = (from u in _medicationsContext.Users
                         where u.EmailAddress == userName & u.Password == password
                         select u);
-  
-            return user;
+
+            return user.FirstOrDefault();
+            
         }
 
 

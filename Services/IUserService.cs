@@ -8,7 +8,7 @@ using Medication;
 
 namespace Services
 {
-    internal interface IUserService
+    public interface IUserService
     {
         public Task<User> getUser(string userName, string password);
         

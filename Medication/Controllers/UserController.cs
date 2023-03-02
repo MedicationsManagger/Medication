@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Entites;
+using Services;
 
 
 
@@ -11,11 +12,24 @@ namespace Medication.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         // GET: api/<UserController>
         [HttpGet]
         public async Task<ActionResult< IEnumerable<User>>> Get([FromQuery]string userName, string password)
         {
-            User u= 
+            User? user = await _userService.getUser(userName, password);
+
+            if (user !=null)
+                return Ok(user);
+
+            return NotFound();
         }
 
 
