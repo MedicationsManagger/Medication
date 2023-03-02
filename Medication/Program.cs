@@ -16,6 +16,7 @@ builder.Services.AddDbContext<MedicationsContext>(option => option.UseSqlServer(
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

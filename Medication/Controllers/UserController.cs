@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Entites;
 using Services;
+using DTO;
+using AutoMapper;
 
 
 
@@ -14,20 +16,27 @@ namespace Medication.Controllers
     {
 
         private readonly IUserService _userService;
+        private readonly IMapper _mapper;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper= mapper;
         }
 
         // GET: api/<UserController>
-        [HttpGet]
-        public async Task<ActionResult< IEnumerable<User>>> Get([FromQuery]string userName, string password)
+        [HttpGet, ]
+        public async Task<ActionResult <UserDTO>> Get([FromQuery]string userName, string password)
         {
-            User? user = await _userService.getUser(userName, password);
 
-            if (user !=null)
-                return Ok(user);
+            if (_userService.getUser(userName, password) != null)
+            {
+                User user = await _userService.getUser(userName, password);
+                UserDTO userDTO = _mapper.Map<UserDTO> (user); 
+                return Ok(userDTO);
+            }   
+           
+               
 
             return NotFound();
         }

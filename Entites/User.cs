@@ -26,7 +26,7 @@ namespace Medication
         public int GenderId { get; set; }
        
         [JsonIgnore]
-        public virtual GenderCode Gender { get; set; } = null!;
+        public virtual GenderCode Gender { get; set; } =  null!;
         [JsonIgnore]
         public virtual ICollection<Measurement> Measurements { get; set; }
         [JsonIgnore]

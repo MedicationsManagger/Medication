@@ -1,7 +1,8 @@
 ﻿
 using AutoMapper;
+using DTO;
 
-namespace DTO
+namespace Medication
 {
     public class Mapper:Profile
     {
@@ -9,6 +10,5 @@ namespace DTO
         {
             CreateMap<User, UserDTO>().ReverseMap();
         }
-        
     }
 }
