@@ -37,13 +37,21 @@ namespace Medication.Controllers
         }
 
 
-
         [HttpPost]
         public async Task<ActionResult<SystemMessageDTO>> Post([FromBody] SystemMessage systemMessage)
         {
             SystemMessage newSystemMessage = await _SystemMessageService.addSystemMessage(systemMessage);
             return CreatedAtAction(nameof(Get), new { newSystemMessage }, newSystemMessage);
         }
+
+        
+        [HttpPut("{id}")]
+        public async void Put([FromBody] SystemMessage systemMessage)
+        {
+            await _SystemMessageService.updateSystemMessage(systemMessage);
+            return;
+        }
+
 
 
 
