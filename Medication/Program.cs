@@ -11,6 +11,10 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddScoped<ISystemMessageRepository, SystemMessagesRepository>();
+builder.Services.AddScoped<ISystemMessageService, SystemMessageService>();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<MedicationsContext>(option => option.UseSqlServer(builder.Configuration.GetValue<String>("connectionString")));
 

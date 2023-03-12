@@ -9,6 +9,7 @@ namespace Medication
         public Mapper()
         {
             CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<SystemMessage, SystemMessageDTO>().ReverseMap();
         }
     }
 }
