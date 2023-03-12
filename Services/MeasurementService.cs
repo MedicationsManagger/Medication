@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Medication;
+using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,32 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    internal class MeasurementService
+    public class MeasurementService : IMeasurementService
     {
+
+        private IMeasurementRepository _measurementRepository;
+
+        public MeasurementService(IMeasurementRepository measurementRepository)
+        {
+            _measurementRepository = measurementRepository;
+        }
+
+
+
+
+        public Task<Measurement> addMeasurement(Measurement measurementForAdd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Measurement> getLastMeasurement(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Measurement>> getMeasurementsByDate(int userId, DateTime start, DateTime end)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
