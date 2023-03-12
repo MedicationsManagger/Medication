@@ -19,11 +19,9 @@ namespace Services
         }
 
 
-
-
-        public Task<Measurement> addMeasurement(Measurement measurementForAdd)
+        public async Task<Measurement> addMeasurement(Measurement measurementForAdd)
         {
-            throw new NotImplementedException();
+            return await _measurementRepository.addMeasurement(measurementForAdd);
         }
 
         public Task<Measurement> getLastMeasurement(int userId)
