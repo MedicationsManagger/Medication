@@ -1,5 +1,6 @@
 ﻿using Entites;
 using Medication;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,17 @@ namespace Repository
             return measurementForAdd;
         }
 
-        public Task<Measurement> getLastMeasurement(int userId)
-        {
+        public async Task<IEnumerable<Measurement>> getLastMeasurement(int userId)
+        { 
+
+                var lastMeasurement = (from m in _medicationsContext.Measurements
+                                       where m.UserId == userId
+                          select m);
+
+           
+
+            await _medicationsContext.
+
             throw new NotImplementedException();
         }
 
