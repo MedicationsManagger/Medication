@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using DTO;
+using Entites;
 
 namespace Medication
 {

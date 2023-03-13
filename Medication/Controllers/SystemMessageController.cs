@@ -4,8 +4,8 @@ using DTO;
 using AutoMapper;
 using Services;
 using System.Xml.Linq;
+using Entites;
 
-    
 namespace Medication.Controllers
 {
     [Route("api/[controller]")]

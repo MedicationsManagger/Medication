@@ -1,4 +1,5 @@
-﻿using Medication;
+﻿using Entites;
+using Medication;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections;

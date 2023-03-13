@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Medication
+namespace Entites
 {
     public partial class TakingMedication
     {

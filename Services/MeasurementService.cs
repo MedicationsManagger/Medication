@@ -1,4 +1,5 @@
-﻿using Medication;
+﻿using Entites;
+using Medication;
 using Repository;
 using System;
 using System.Collections.Generic;

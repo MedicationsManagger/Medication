@@ -1,4 +1,5 @@
-﻿using Medication;
+﻿using Entites;
+using Medication;
 
 namespace Repository
 {
