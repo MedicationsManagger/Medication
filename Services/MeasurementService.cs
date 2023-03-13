@@ -19,7 +19,6 @@ namespace Services
             _measurementRepository = measurementRepository;
         }
 
-
         public async Task<Measurement> addMeasurement(Measurement measurementForAdd)
         {
             return await _measurementRepository.addMeasurement(measurementForAdd);
