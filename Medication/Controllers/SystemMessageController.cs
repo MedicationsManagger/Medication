@@ -42,6 +42,8 @@ namespace Medication.Controllers
         public async Task<ActionResult<SystemMessageDTO>> Post([FromBody] SystemMessage systemMessage)
         {
             SystemMessage newSystemMessage = await _SystemMessageService.addSystemMessage(systemMessage);
+            //mapper - להחזיר dto
+
             return CreatedAtAction(nameof(Get), new { newSystemMessage }, newSystemMessage);
         }
 
