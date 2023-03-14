@@ -40,10 +40,10 @@ namespace Medication.Controllers
         }
 
 
-        // POST api/<UserController>
-        [HttpPost]
-        public async Task<ActionResult<User>> Post([FromBody] UserDTO UDto)
-        {
+        //// POST api/<UserController>
+        //[HttpPost]
+        //public async Task<ActionResult<User>> Post([FromBody] UserDTO UDto)
+        //{
 
             User UserDTO = _mapper.Map<UserDTO, User>(UDto);
             User u = await _userService.addUser(UserDTO);
