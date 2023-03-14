@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Entites;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -21,6 +22,20 @@ namespace Medication.Controllers
         }
 
 
+
+        [HttpGet]
+        public async Task<ActionResult<Measurement>> Get([FromQuery]int userId)
+        {
+            Measurement lastMesurment = await _measurementService.getLastMeasurement(userId);
+            if (lastMesurment ==null)
+            {
+                return NoContent();
+            }
+            return Ok(lastMesurment);
+        }
+        
+
+
         // GET: api/<MeasurementController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -28,12 +43,7 @@ namespace Medication.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<MeasurementController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        
 
 
 

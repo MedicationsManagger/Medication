@@ -59,13 +59,5 @@ namespace Medication.Controllers
 
 
 
-
-
-
-
-
-
-
-
     }
 }
