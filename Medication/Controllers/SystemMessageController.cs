@@ -39,12 +39,15 @@ namespace Medication.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<SystemMessageDTO>> Post([FromBody] SystemMessage systemMessage)
+        public async Task<ActionResult<SystemMessage>> Post([FromBody] SystemMessageDTO systemMessage)
         {
-            SystemMessage newSystemMessage = await _SystemMessageService.addSystemMessage(systemMessage);
+            SystemMessage newSystemMessage = _mapper.Map<SystemMessageDTO, SystemMessage>(systemMessage);
+            SystemMessage ms=await _SystemMessageService.addSystemMessage(newSystemMessage);
             //mapper - להחזיר dto
 
-            return CreatedAtAction(nameof(Get), new { newSystemMessage }, newSystemMessage);
+            return CreatedAtAction(nameof(Get), new { ms }, ms);
+
+           
         }
 
         
