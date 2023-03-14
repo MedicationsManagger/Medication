@@ -23,9 +23,11 @@ namespace Medication.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SystemMessage>>> Get([FromQuery] int userId)
+        public async Task<ActionResult<IEnumerable<SystemMessageDTO>>> Get([FromQuery] int userId)
         {
-            IEnumerable<SystemMessage>? systemMessages = await _SystemMessageService.getSystemMessages(userId);
+            IEnumerable<SystemMessage> systemMessages = await _SystemMessageService.getSystemMessages(userId);
+
+            IEnumerable<SystemMessageDTO> msDTO = _mapper.Map<IEnumerable<SystemMessage>, IEnumerable<SystemMessageDTO>>(systemMessages);
 
             if (systemMessages == null)
             {
@@ -33,7 +35,6 @@ namespace Medication.Controllers
             }
 
             return Ok(systemMessages);
- 
         }
 
 

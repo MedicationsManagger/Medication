@@ -24,7 +24,7 @@ namespace Medication.Controllers
                 if (_medicineStockService.getMedicineStocks(userId) != null)
                 {
                     IEnumerable<MedicineStock> ms = await _medicineStockService.getMedicineStocks(userId);
-                IEnumerable<MedicineStockDTO> msDTO = _mapper.Map<IEnumerable<MedicineStock>, IEnumerable<MedicineStockDTO>>(ms);
+                    IEnumerable<MedicineStockDTO> msDTO = _mapper.Map<IEnumerable<MedicineStock>, IEnumerable<MedicineStockDTO>>(ms);
                     return Ok(msDTO);
                 }
                 return NotFound();

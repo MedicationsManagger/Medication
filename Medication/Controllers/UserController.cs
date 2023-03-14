@@ -42,9 +42,6 @@ namespace Medication.Controllers
         }
 
 
-
-
-
         // GET api/<UserController>/5
         [HttpGet("{id}")]
         public string Get(int id)

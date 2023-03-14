@@ -32,10 +32,6 @@ namespace Repository
                                        where m.UserId == userId
                           select m);
 
-           
-
-            await _medicationsContext.
-
             throw new NotImplementedException();
         }
 
@@ -43,5 +39,7 @@ namespace Repository
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
