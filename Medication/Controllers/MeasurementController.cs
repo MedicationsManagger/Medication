@@ -22,7 +22,6 @@ namespace Medication.Controllers
         }
 
 
-
         [HttpGet]
         public async Task<ActionResult<Measurement>> Get([FromQuery]int userId)
         {
@@ -33,24 +32,26 @@ namespace Medication.Controllers
             }
             return Ok(lastMesurment);
         }
-        
 
-
-        // GET: api/<MeasurementController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<Measurement>>> Get([FromQuery]int userId, DateTime start, DateTime end)
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<Measurement> measurementRes = await _measurementService.getMeasurementsByDate(userId, start, end);
+
+            if (measurementRes == null)
+            {
+                return NoContent();
+            }
+            return Ok(measurementRes);
+
         }
 
-        
-
-
-
-        // POST api/<MeasurementController>
+       
         [HttpPost]
         public void Post([FromBody] string value)
+
         {
+
         }
 
      

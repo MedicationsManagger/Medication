@@ -27,7 +27,7 @@ namespace Repository
 
         public async Task<Measurement> getLastMeasurement(int userId)
         {
-            var lastMeasurement = ("SELECT  TOP 1 FROM [Medications].[dbo].[SystemMessage]where UserId = 4 norder by date Desc");
+            var lastMeasurement = ("SELECT  TOP 1 FROM [Medications].[dbo].[SystemMessage]where UserId = 4 order by date Desc");
 
             throw new NotImplementedException();
         }
