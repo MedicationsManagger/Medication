@@ -17,6 +17,7 @@ namespace Medication.Controllers
                 _medicineStockService = medicineStockService;
                 _mapper = mapper;
             }
+
             [HttpGet]
             public async Task<ActionResult<IEnumerable<MedicineStockDTO>>> Get([FromQuery] int userId)
             {
