@@ -36,39 +36,30 @@ namespace Medication.Controllers
                 return Ok(userDTO);
             }   
            
-               
-
             return NotFound();
         }
 
 
-        // GET api/<UserController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/<UserController>
         [HttpPost]
-        public async Task<ActionResult<User>> Post([FromBody] User user)
+        public async Task<ActionResult<User>> Post([FromBody] UserDTO UDto)
         {
-            User u = await _userService.addUser(user);
-            return user;
+
+            User UserDTO = _mapper.Map<UserDTO, User>(UDto);
+            User u = await _userService.addUser(UserDTO);
+            return u;
+
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public async void Put(int id, [FromBody] User user )
+        [HttpPut]
+        public async Task Put([FromBody] UserDTO userToUpdate)
         {
-            await _userService.updateUser(user);
-            return;
-        }
 
-        // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var user = _mapper.Map<UserDTO, User>(userToUpdate);
+            if (user != null)
+                await _userService.updateUser(user);
+            return;
         }
     }
 }

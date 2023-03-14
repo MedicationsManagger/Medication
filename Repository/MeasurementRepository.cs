@@ -40,6 +40,9 @@ namespace Repository
             throw new NotImplementedException();
         }
 
-        
+        Task<Measurement> IMeasurementRepository.getLastMeasurement(int userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

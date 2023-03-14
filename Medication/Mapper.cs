@@ -9,8 +9,8 @@ namespace Medication
     {
         public Mapper()
         {
-            CreateMap<User, UserDTO>().ReverseMap();
-            CreateMap<SystemMessage, SystemMessageDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().ForMember(dest => dest.GenderId, opts => opts.MapFrom(src => src.Gender.Id)).ReverseMap();
+            CreateMap<SystemMessage, SystemMessageDTO>().ForMember(dest => dest.UserId, opts => opts.MapFrom(src => src.User.Id)).ReverseMap();
             CreateMap<MedicineStock, MedicineStockDTO>().ForMember(dest => dest.MedicineId, opts => opts.MapFrom(src => src.Medicine.Id)).ReverseMap();
         }
     }
