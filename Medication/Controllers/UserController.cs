@@ -40,13 +40,15 @@ namespace Medication.Controllers
         }
 
 
-        //// POST api/<UserController>
-        //[HttpPost]
-        //public async Task<ActionResult<User>> Post([FromBody] UserDTO UDto)
-        //{
+        // POST api/<UserController>
+        [HttpPost]
+        public async Task<ActionResult<User>> Post([FromBody] UserDTO UDto)
+        {
 
             User UserDTO = _mapper.Map<UserDTO, User>(UDto);
+            UserDTO.Gender = null;
             User u = await _userService.addUser(UserDTO);
+           
             return u;
 
         }
@@ -61,6 +63,6 @@ namespace Medication.Controllers
                 await _userService.updateUser(user);
             return;
         }
-       
+
     }
 }

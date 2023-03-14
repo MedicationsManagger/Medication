@@ -1,4 +1,5 @@
-﻿using Entites;
+﻿using DTO;
+using Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Repository
 {
     public interface IMedicineStockRepository
     {
-        public Task<IEnumerable<MedicineStock>> GetMedicineStocks(int userId);
+        public Task<IEnumerable<MedicineStockDTO>> GetMedicineStocks(int userId);
         public  Task <MedicineStock> AddMedicineStock(MedicineStock ms );
         public Task UpdateMedicineStock(MedicineStock ms );
     }

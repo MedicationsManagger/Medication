@@ -1,4 +1,5 @@
-﻿using Entites;
+﻿using DTO;
+using Entites;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -20,19 +21,9 @@ namespace Services
             return await _medicineStockRepository.AddMedicineStock(ms);
         }
 
-        public Task<MedicineStock> addMedicineStock(MedicineStock ms)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<MedicineStock>> GetMedicineStocks(int userId)
+        public async Task<IEnumerable<MedicineStockDTO>> GetMedicineStocks(int userId)
         {
             return await _medicineStockRepository.GetMedicineStocks(userId);
-        }
-
-        public Task<IEnumerable<MedicineStock>> getMedicineStocks(int userId)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task UpdateMedicineStock(MedicineStock ms)
@@ -40,9 +31,6 @@ namespace Services
              await _medicineStockRepository.UpdateMedicineStock(ms);
         }
 
-        public Task updateMedicineStock(MedicineStock ms)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

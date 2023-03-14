@@ -1,4 +1,5 @@
-﻿using Entites;
+﻿using DTO;
+using Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace Services
 {
     public interface IMedicineStockService
     {
-        public Task<IEnumerable<MedicineStock>> getMedicineStocks(int userId);
-        public Task<MedicineStock> addMedicineStock(MedicineStock ms);
-        public Task updateMedicineStock(MedicineStock ms);
+        public Task<IEnumerable<MedicineStockDTO>> GetMedicineStocks(int userId);
+        public Task<MedicineStock> AddMedicineStock(MedicineStock ms);
+        public Task UpdateMedicineStock(MedicineStock ms);
     }
+}
 }

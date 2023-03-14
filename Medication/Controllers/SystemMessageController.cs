@@ -42,15 +42,17 @@ namespace Medication.Controllers
         public async Task<ActionResult<SystemMessage>> Post([FromBody] SystemMessageDTO systemMessage)
         {
             SystemMessage newSystemMessage = _mapper.Map<SystemMessageDTO, SystemMessage>(systemMessage);
+            newSystemMessage.User = null;
             SystemMessage ms=await _SystemMessageService.addSystemMessage(newSystemMessage);
-         
+            return ms;
 
-            return CreatedAtAction(nameof(Get), new { ms }, ms);
 
-           
+
+
+
         }
+       
 
-        
         [HttpPut("{id}")]
         public async Task Put([FromBody] SystemMessageDTO systemMessage)
         {

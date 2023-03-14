@@ -1,4 +1,5 @@
-﻿using Entites;
+﻿using DTO;
+using Entites;
 using Medication;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Repository
             return ms;
         }
 
-        public Task<IEnumerable<MedicineStock>> GetMedicineStocks(int userId)
+        public Task<IEnumerable<MedicineStockDTO>> GetMedicineStocks(int userId)
         {
             var ms = (from u in _medicationsContext.MedicineStocks
                       where u.Id == userId
