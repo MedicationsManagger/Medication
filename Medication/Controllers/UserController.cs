@@ -52,7 +52,7 @@ namespace Medication.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task Put([FromBody] UserDTO userToUpdate)
         {
 
@@ -61,5 +61,6 @@ namespace Medication.Controllers
                 await _userService.updateUser(user);
             return;
         }
+       
     }
 }

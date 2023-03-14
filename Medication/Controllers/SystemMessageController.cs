@@ -43,7 +43,7 @@ namespace Medication.Controllers
         {
             SystemMessage newSystemMessage = _mapper.Map<SystemMessageDTO, SystemMessage>(systemMessage);
             SystemMessage ms=await _SystemMessageService.addSystemMessage(newSystemMessage);
-            //mapper - להחזיר dto
+         
 
             return CreatedAtAction(nameof(Get), new { ms }, ms);
 
@@ -52,12 +52,14 @@ namespace Medication.Controllers
 
         
         [HttpPut("{id}")]
-        public async void Put([FromBody] SystemMessage systemMessage)
+        public async Task Put([FromBody] SystemMessageDTO systemMessage)
         {
-            await _SystemMessageService.updateSystemMessage(systemMessage);
+            var sm = _mapper.Map<SystemMessageDTO, SystemMessage>(systemMessage);
+            if(sm!=null)
+                await _SystemMessageService.updateSystemMessage(sm);
             return;
         }
-
+        
 
 
 
