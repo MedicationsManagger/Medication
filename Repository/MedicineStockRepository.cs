@@ -1,11 +1,13 @@
 ﻿using DTO;
 using Entites;
 using Medication;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Repository
 {
@@ -25,13 +27,19 @@ namespace Repository
             return ms;
         }
 
-        public Task<IEnumerable<MedicineStockDTO>> GetMedicineStocks(int userId)
+        public async Task<IEnumerable<MedicineStockDTO>> GetMedicineStocks(int userId)
         {
-            var ms = (from u in _medicationsContext.MedicineStocks
-                      where u.Id == userId
-                      select u);
-            return (Task<IEnumerable<MedicineStock>>)ms;
-        }
+            var ms = (from m in _medicationsContext.MedicineStocks
+                      where m.UserId == userId
+                      select m);
+
+            List<MedicineStockDTO> MedicineStocks = await ms.ToListAsync();
+            return MedicineStocks;
+
+         }
+       
+
+
 
         public async Task UpdateMedicineStock(MedicineStock ms)
         {

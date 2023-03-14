@@ -20,13 +20,13 @@ namespace Medication.Controllers
             }
             // GET: api/<UserController>
             [HttpGet,]
-            public async Task<ActionResult<IEnumerable<MedicineStockDTO>>> Get([FromQuery] int userId)
+            public async Task<ActionResult<IEnumerable<MedicineStock>>> Get([FromQuery] int userId)
             {
 
-                if (_medicineStockService.getMedicineStocks(userId) != null)
+                if (_medicineStockService.GetMedicineStocks(userId) != null)
                 {
-                    IEnumerable<MedicineStock> ms = await _medicineStockService.getMedicineStocks(userId);
-                    IEnumerable<MedicineStockDTO> msDTO = (IEnumerable<MedicineStockDTO>)_mapper.Map<MedicineStockDTO>(ms);
+                    IEnumerable<MedicineStockDTO> ms = await _medicineStockService.GetMedicineStocks(userId);
+                    IEnumerable<MedicineStock> msDTO = (IEnumerable<MedicineStockDTO>)_mapper.Map<MedicineStockDTO>(ms);
                 
                     return Ok(msDTO);
                 }
